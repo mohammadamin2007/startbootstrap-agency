@@ -1,0 +1,23 @@
+body{
+    @include font-style
+}
+.navbar{
+    padding: 1.5rem 0 !important;
+    transition: all 1s;
+    .navbar-brand{
+        img{
+            width: 11rem;
+        }
+    }
+    .nav-item{
+        margin-right: 1rem !important;
+        .nav-link{
+            color: $default-text-color;
+            letter-spacing: 0.0625em;
+            font-size: 15px;
+        }
+        .nav-link:hover{
+            @include theme-HOVER-BG("color")
+        }
+    }
+}

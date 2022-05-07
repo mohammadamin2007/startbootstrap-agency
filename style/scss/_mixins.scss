@@ -1,0 +1,10 @@
+@mixin theme-HOVER-BG($bgorcolor) {
+    @if ($bgorcolor == "bg") {
+        background-color: $default-theme-color-background;
+    } @else{
+        color: $default-theme-color-background;
+    }
+}
+@mixin font-style {
+    font-family: 'MetropolisNF', sans-serif !important;
+}
