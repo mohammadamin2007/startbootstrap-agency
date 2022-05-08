@@ -1,13 +1,15 @@
-body {
-  font-family: "MetropolisNF", sans-serif !important;
+.font-weight-700, .header .container .btn-primary, .header .container strong {
+  font-weight: 700;
 }
 
 .navbar {
   padding: 1.5rem 0 !important;
   transition: all 1s;
+  background-color: rgba(0, 0, 0, 0);
 }
 .navbar .navbar-brand img {
-  width: 11rem;
+  width: 12rem;
+  transition: all 0.3s;
 }
 .navbar .nav-item {
   margin-right: 1rem !important;
@@ -19,6 +21,31 @@ body {
 }
 .navbar .nav-item .nav-link:hover {
   color: #ffc800 !important;
+}
+
+.header {
+  background-image: url(../../pictures/header-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  color: white !important;
+  padding: 17rem 0 12.5rem 0;
+}
+.header .container strong {
+  font-size: 4.5rem;
+  margin-bottom: 4rem;
+}
+.header .container .top-heading {
+  font-size: 2.25rem;
+}
+.header .container .btn-primary {
+  background-color: #ffc800 !important;
+  border-color: #ffc800 !important;
+  font-size: 1.125rem;
+  padding: 1.25rem 2.5rem;
+}
+.header .container :focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.8) !important;
 }
 
 /*# sourceMappingURL=main.css.map */
