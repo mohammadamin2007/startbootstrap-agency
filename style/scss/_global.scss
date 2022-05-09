@@ -1,34 +1,64 @@
-.font-weight-700{
-    font-weight: 700;
+.py-8{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
-.navbar{
-    padding: 1.5rem 0 !important;
-    transition: all 1s;
-    background-color: rgba(0, 0, 0, 0);
+.py-6{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.ff-none{
+    font-family: none;
+}
+.subtitle{
+    margin-bottom: 4rem !important;
+    @extend .ff-none;
+    font-size: large;
+}
+.conset-navbar{
     .navbar-brand{
         img{
             width: 12rem;
-            transition: all .3s;
+            transition: all .3s ease-in-out;
         }
     }
     .nav-item{
         margin-right: 1rem !important;
         .nav-link{
-            color: $default-text-color;
+            color: $default-text-color-wi;
             letter-spacing: 0.0625em;
-            font-size: 15px;
+            font-size: 17px;
+            font-weight: 100;
         }
         .nav-link:hover{
             @include theme-HOVER-BG("color")
         }
     }
 }
-.header{
+.font-weight-700{
+    font-weight: 700;
+}
+.shrinked-navbar{
+    padding: 1rem 0 !important;
+    .navbar-brand{
+        img{
+            width: 9rem !important;
+        }
+    }
+}
+.navbar{
+    transition: padding .3s;
+    background-color: rgba(0, 0, 0, 0);
+    @extend .conset-navbar
+}
+.navbar-normal{
+    padding: 1.5rem 0 !important;
+    @extend .conset-navbar
+}
+#header{
     background-image: url(../../pictures/header-bg.jpg);
     background-size: cover;
     background-position: center center;
-    background-attachment: scroll;
-    color: $default-text-color;
+    color: $default-text-color-wi;
     padding: 17rem  0 12.5rem 0;
     .container{
         strong{
@@ -47,6 +77,78 @@
             @extend .font-weight-700
         }:focus{
             box-shadow: 0 0 0 0.25rem rgb(255 193 7 / 80%) !important;
+        }
+        .btn-primary:hover{
+            background-color: #d9aa00 !important;
+            border-color: #cca000 !important;
+        }
+    }
+}
+#services{
+    color: $default-text-color-bl;
+    .container{
+        .cols{
+            .col{
+                .icon{
+                    .fa-stack{
+                        .text-current{
+                            color: $default-theme-color-background;
+                        }
+                    }   
+                }
+                .p-content{
+                    line-height: 1.45;
+                    @extend .ff-none;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+#portfolio{
+    background-color: $default-background-striped;
+    .subtitle{
+        margin-bottom: 4rem !important;
+    }
+    .container{
+        .pictures{
+            .portfolio-card{
+                .portfolio-pic{
+                    position: relative;
+                    .portfolio-pic-hover{
+                        width: 100%;
+                        height: 100%;
+                        color: white;
+                        background-color: rgba(255, 200, 0, 0);
+                        font-size: 1.2rem;
+                        transition: all .25s;
+                        .fas{
+                            color: rgba(255, 255, 255, 0);
+                            transition: all .25s;
+                        }
+                    }
+                }
+                padding-right: .75rem;
+                padding-left: .75rem;
+                .portfolio-card-footer{
+                    padding: 1.5rem;
+                    background-color: white;
+                    .portfolio-title, .portfolio-discription{
+                        margin-bottom: 0;
+                    }
+                    .portfolio-discription{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            .portfolio-pic:hover{
+                .portfolio-pic-hover{
+                    background-color: rgba(255, 200, 0, .9);
+                    .fas{
+                        color: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
         }
     }
 }
