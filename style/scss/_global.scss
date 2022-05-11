@@ -1,10 +1,18 @@
+html{
+    @media screen and (max-width: 254px){
+        width: 352%;
+    }
+}
 .py-8{
     padding-top: 8rem;
     padding-bottom: 8rem;
 }
 .py-6{
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+a{
+    cursor: pointer;
 }
 .ff-none{
     font-family: none;
@@ -35,7 +43,7 @@
     }
 }
 .font-weight-700{
-    font-weight: 700;
+    font-weight: 700 !important;
 }
 .shrinked-navbar{
     padding: 1rem 0 !important;
@@ -48,10 +56,22 @@
 .navbar{
     transition: padding .3s;
     background-color: rgba(0, 0, 0, 0);
-    @extend .conset-navbar
+    @extend .conset-navbar;
+    @media screen and (max-width: 991.5px){
+        background-color: #212529 !important;
+        padding: 1rem 0 !important;
+        .navbar-brand{
+            img{
+                width: 9rem !important;
+            }
+        }
+    }
 }
 .navbar-normal{
     padding: 1.5rem 0 !important;
+    @media screen and (max-width: 991.5px){
+        padding: 1rem 0 !important;
+    }
     @extend .conset-navbar
 }
 #header{
@@ -64,23 +84,14 @@
         strong{
             font-size: 4.5rem;
             margin-bottom: 4rem;
-            @extend .font-weight-700
+            @extend .font-weight-700;
+            @media screen and (max-width: 768px){
+                font-size: 3.3rem;
+            }
         }
+        @include btn-primary-customized;
         .top-heading{
             font-size: 2.25rem;
-        }
-        .btn-primary{
-            @include theme-HOVER-BG("bg");
-            border-color: $default-theme-color-background;
-            font-size: 1.125rem;
-            padding: 1.25rem 2.5rem;
-            @extend .font-weight-700
-        }:focus{
-            box-shadow: 0 0 0 0.25rem rgb(255 193 7 / 80%) !important;
-        }
-        .btn-primary:hover{
-            background-color: #d9aa00 !important;
-            border-color: #cca000 !important;
         }
     }
 }
@@ -89,6 +100,7 @@
     .container{
         .cols{
             .col{
+                padding: 0 .75rem 0 .75rem;
                 .icon{
                     .fa-stack{
                         .text-current{
@@ -105,14 +117,56 @@
         }
     }
 }
+.portfolio-modal{
+    .modal-dialog{
+        padding: 1rem;
+        max-width: 100%;
+        height: 100%;
+        .modal-content{
+            padding: 1rem;
+            text-align: center;
+            .close-btn-father{
+                width: 100%;
+                justify-content: end;
+                top: 1rem;
+                right: 1rem;
+                .close-btn{
+                    width: 4rem;
+                    background-color: white;
+                    border: none;
+                    padding-bottom: 2rem;
+                }
+                .close-btn:hover{
+                    opacity: .3;
+                }
+            }
+            .modal-body{
+                .container{
+                    .subtitle, img, .discription, ul{
+                        margin-bottom: 2rem !important;
+                    }
+                    .btn-primary{
+                        width: 16rem;
+                    }
+                    @include btn-primary-customized
+                }
+            }
+        }
+    }
+}
 #portfolio{
     background-color: $default-background-striped;
     .subtitle{
-        margin-bottom: 4rem !important;
+        @extend .subtitle
     }
     .container{
         .pictures{
+            @media screen and (max-width: 576px) {
+               justify-content: center;
+            }
             .portfolio-card{
+                padding-right: .75rem;
+                padding-left: .75rem;
                 .portfolio-pic{
                     position: relative;
                     .portfolio-pic-hover{
@@ -128,8 +182,6 @@
                         }
                     }
                 }
-                padding-right: .75rem;
-                padding-left: .75rem;
                 .portfolio-card-footer{
                     padding: 1.5rem;
                     background-color: white;
@@ -143,10 +195,218 @@
             }
             .portfolio-pic:hover{
                 .portfolio-pic-hover{
-                    background-color: rgba(255, 200, 0, .9);
+                    background-color: $background-when-hover-portfolio;
                     .fas{
                         color: rgba(255, 255, 255, 1);
                     }
+                }
+            }
+        }
+    }
+}
+#about{
+    background-color: $default-background;
+    .container{
+        .subtitle{
+            @extend .subtitle
+        }
+        .timeline{
+            .about-section{
+                margin: 0 0 100px;
+                .about-section-text{
+                    width: 25rem;
+                    direction: rtl;
+                    margin: 0 1.55rem 1.55rem 8.4375rem;
+                    @media screen and (max-width: 768px) {
+                        order: 1;
+                        direction: ltr;
+                        margin: 0 0 1.55rem 2rem !important;
+                    }
+                    .about-section-discription{
+                        font-size: 1.125rem;
+                    }
+                }
+                .about-section-image{
+                    z-index: 200;
+                    .img-container{
+                        display: inline-block;
+                        background-color: #e9ecef;
+                        border: 7px solid #e9ecef;
+                        img{
+                            background-color: $default-theme-color-background;
+                            padding: 1px;
+                            max-width: 10rem;
+                            @media screen and (max-width: 991.5px) {
+                                max-width: 5.5rem;
+                            }
+                            @media screen and (max-width: 768.5px) {
+                                max-width: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .about-section-1{
+                margin: 0 0 100px;
+                direction: rtl;
+                @media screen and (max-width: 768px) {
+                    direction: ltr;
+                }
+                .about-section-text-split{
+                    direction: ltr;
+                    width: 25rem;
+                    order: 0;
+                    right: 8rem;
+                    margin: 0 8.4375rem 1.55rem 1.55rem;
+                    @media screen and (max-width: 768px){
+                        margin: 0 0 1.55rem 2rem;
+                        order: 1;
+                    }
+                }
+                .about-section-discription{
+                    font-size: 1.125rem;
+                }
+                .about-section-image{
+                    z-index: 200;
+                    .img-container{
+                        display: inline-block;
+                        background-color: #e9ecef;
+                        border: 7px solid #e9ecef;
+                        img{
+                            background-color: $default-theme-color-background;
+                            padding: 1px;
+                            max-width: 10rem;
+                            @media screen and (max-width: 991.5px) {
+                                max-width: 5.5rem;
+                            }
+                            @media screen and (max-width: 768.5px) {
+                                max-width: 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+            .about-end{
+               div{
+                   @include theme-HOVER-BG("bg");
+                   width: 11rem;
+                   padding: 2.5rem 0;
+                   border: 6px solid #dee2e6;
+                   font-size: 1.125rem;
+                    color: white;
+                    font-weight: bolder;
+                    @media screen and (max-width: 991.5px) {
+                        width: 6rem;
+                        height: 6rem;
+                        font-size: .6rem;
+                        padding: 1.4rem 0;
+                    }
+                    @media screen and (max-width: 768.5px) {
+                        width: 5rem;
+                        height: 5rem;
+
+                        padding: 0.9rem 0;
+                    }
+               }
+            }
+        }
+    }
+}
+#team{
+    background-color: $default-background-striped;
+    .container{
+        .cols{
+            .col{
+                .col-img{
+                    img{
+                        width: 14rem;
+                        border: .5rem solid rgba(0, 0, 0, .1);
+                    }
+                }
+                .col-text{
+                    p:first-child{
+                        margin-top: 1.5rem;
+                    }
+                    p:last-child{
+                        margin-bottom: 2rem;
+                        font-size: 1.1rem !important;
+                    }
+                }
+            }
+        }
+        .team-footer{
+            p{
+                @media screen and (max-width: 991.5px) {
+                    width: 100%;
+                }
+                font-size: 1.2rem;
+
+            }
+        }
+    }
+}
+.company{
+    .container{
+        .d-flex{
+            .company-col{
+                a{
+                    img{
+                    height: 2.75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+#contact{
+    background-image: url(../../pictures/map-image.png);
+    background-color: #212529;
+    .container{
+        .subtitle{
+            margin-bottom: 4rem;
+        }
+        form{
+            .cols{
+                .col-12{
+                    padding: 0 .75rem 0 .75rem;
+                    @media screen and (max-width: 991.5px) {
+                        padding: 0 .4rem;
+                    }
+                    .form-group{
+                        margin-bottom: 1.5rem !important;
+                        input{
+                            padding: 1.25rem !important;
+                        }
+                        input::placeholder{
+                            font-weight: bold;
+                            color: #6c757d!important ; 
+                            opacity: .4;
+                        }
+                    }
+                    input{
+                        margin-bottom: 0 !important;
+                    }
+                    input::placeholder{
+                        font-weight: bold;
+                        color: #6c757d!important ; 
+                    }
+                }
+                .col-12:last-child{
+                    textarea{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    textarea::placeholder{
+                        font-weight: bold;
+                        color: #6c757d!important ; 
+                        opacity: .4;
+                    }
+                }
+            }
+            .form-btn{
+                @include btn-primary-customized;
+                .btn-primary{
+                    width: 15rem;
                 }
             }
         }

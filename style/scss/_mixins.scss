@@ -5,3 +5,19 @@
         color: $default-theme-color-background;
     }
 }
+@mixin btn-primary-customized {
+    .btn-primary{
+        @include theme-HOVER-BG("bg");
+        border-color: $default-theme-color-background;
+        font-size: 1.125rem;
+        padding: 1.25rem 2.5rem;
+        @extend .font-weight-700
+    }
+    .btn-primary:focus{
+        box-shadow: 0 0 0 0.25rem rgb(255 193 7 / 80%) !important;
+    }
+    .btn-primary:hover{
+        background-color: #d9aa00 !important;
+        border-color: #cca000 !important;
+    }
+}
